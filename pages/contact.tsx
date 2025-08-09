@@ -7,10 +7,12 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const startedAtRef = useRef<number>(Date.now());
   const formspreeEndpoint =
     process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/your-id";
+  const isFormConfigured = !!process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT && !formspreeEndpoint.includes("your-id");
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,12 +44,18 @@ export default function Contact() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data?.error || "Failed to send");
-      setStatus("Thanks! Your message has been sent.");
+      setSuccess(true);
+      setStatus("Message sent successfully. I'll get back to you soon.");
       setName("");
       setEmail("");
       setMessage("");
     } catch (err: unknown) {
-      setStatus(err instanceof Error ? err.message : "Something went wrong.");
+      const msg = err instanceof Error ? err.message : "Something went wrong.";
+      // Improve error when form is not configured
+      setStatus(msg.includes("Form not found") || !isFormConfigured
+        ? "Contact form not configured. Please set NEXT_PUBLIC_FORMSPREE_ENDPOINT."
+        : msg);
+      setSuccess(false);
     } finally {
       setSubmitting(false);
     }
@@ -101,11 +109,20 @@ export default function Contact() {
               required
             />
           </div>
-          <button type="submit" className="glass-button" disabled={submitting} aria-disabled={submitting}>
+          <button type="submit" className="glass-button" disabled={submitting || !isFormConfigured} aria-disabled={submitting || !isFormConfigured}>
             {submitting ? "Sending…" : "Send"}
           </button>
-          <p className="text-sm text-slate-300" aria-live="polite">{status}</p>
+          {status && (
+            <p className={`text-sm ${success ? "text-emerald-400" : "text-red-300"}`} aria-live="polite">{status}</p>
+          )}
         </form>
+        {!isFormConfigured && (
+          <p className="mt-4 text-slate-400">
+            Tip: This form isn't configured yet. Set the repo secret <code className="font-mono">NEXT_PUBLIC_FORMSPREE_ENDPOINT</code>
+            {' '}to your Formspree endpoint, then redeploy. Meanwhile, you can email me at
+            {' '}<a className="underline" href="mailto:vrajpatel1995@gmail.com">vrajpatel1995@gmail.com</a>.
+          </p>
+        )}
       </section>
     </>
   );
