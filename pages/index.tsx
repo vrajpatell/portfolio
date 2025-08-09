@@ -86,8 +86,8 @@ export default function Home() {
                   +1 (469) 245‑7484
                 </a>
                 {" • "}
-                <a className="underline" href="mailto:vpatel3777@gmail.com">
-                  vpatel3777@gmail.com
+                <a className="underline" href="mailto:vrajpatel1995@gmail.com">
+                  vrajpatel1995@gmail.com
                 </a>
               </li>
             </ul>
