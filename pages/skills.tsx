@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import SectionHeader from "@/components/SectionHeader";
 import { useMemo, useState } from "react";
 
 const categories: { title: string; items: string[] }[] = [
@@ -18,7 +19,7 @@ export default function Skills() {
     <>
       <SEO title="Skills • Vraj Patel" description="Programming, AI/ML, cloud, distributed systems, databases, DevOps, and leadership skills." />
       <section className="container-responsive py-16 animate-fadeIn">
-        <h1 className="text-3xl md:text-4xl font-bold">Skills</h1>
+        <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">Skills</SectionHeader>
         <div className="mt-6 flex flex-wrap gap-2">
           <button className={`glass-button text-xs ${active===null?"ring-2 ring-emerald-500/40":''}`} onClick={()=>setActive(null)}>All</button>
           {categories.map(c=> (

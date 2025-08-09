@@ -1,11 +1,12 @@
 import SEO from "@/components/SEO";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function Education() {
   return (
     <>
       <SEO title="Education • Vraj Patel" description="Master’s degrees in Computer Science from Oklahoma Christian University and University of Texas." />
       <section className="container-responsive py-16 animate-fadeIn">
-        <h1 className="text-3xl md:text-4xl font-bold">Education</h1>
+        <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">Education</SectionHeader>
         <div className="mt-8 space-y-6">
           <div className="liquid-card rounded-2xl p-5">
             <h2 className="text-xl font-semibold text-white">M.S., Computer Science — Oklahoma Christian University</h2>

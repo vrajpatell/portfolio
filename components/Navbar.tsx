@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 const links = [
   { href: "/", label: "Home" },
@@ -19,11 +20,13 @@ export default function Navbar() {
   };
   return (
     <header className="sticky top-0 z-40">
-      <nav aria-label="Primary" className="container-responsive liquid-surface flex items-center justify-between h-14 rounded-b-2xl px-4 animate-fadeIn transition-[backdrop-filter,height] duration-300 supports-[backdrop-filter]:backdrop-blur-md will-change-transform">
-        <Link href="/" className="font-bold tracking-tight text-slate-100">
-          Vraj Patel
-        </Link>
-        <div className="hidden md:flex items-center gap-6 text-sm text-slate-200">
+      <nav aria-label="Primary" className="container-responsive liquid-surface flex items-center justify-between h-14 rounded-b-2xl px-4 transition-[backdrop-filter,height] duration-300 supports-[backdrop-filter]:backdrop-blur-md will-change-transform">
+        <motion.div initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+          <Link href="/" className="font-bold tracking-tight text-slate-100">
+            Vraj Patel
+          </Link>
+        </motion.div>
+        <motion.div className="hidden md:flex items-center gap-6 text-sm text-slate-200" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.4 }}>
           {links.map(({ href, label }) => (
             <Link
               key={href}
@@ -34,7 +37,7 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-        </div>
+        </motion.div>
         <div className="md:hidden">
           <details>
             <summary className="cursor-pointer select-none">Menu</summary>

@@ -1,5 +1,7 @@
 import SEO from "@/components/SEO";
 import ProjectCard from "@/components/ProjectCard";
+import { MotionSection } from "@/components/motion/Viewport";
+import SectionHeader from "@/components/SectionHeader";
 import type { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
 import fs from "node:fs/promises";
@@ -57,10 +59,10 @@ export default function Projects({ items }: Props) {
   return (
     <>
       <SEO title="Projects • Vraj Patel" description="Highlighted open‑source projects and demos from GitHub." />
-      <section className="container-responsive py-16 animate-fadeIn section-wrap">
+      <section className="container-responsive py-16 section-wrap">
         <div className="section-bg" style={{backgroundImage: "url(https://images.unsplash.com/photo-1527443224154-c4e1b7a34e8c?q=80&w=1600&auto=format&fit=crop)", borderRadius: 16}} />
         <div className="section-overlay" />
-        <h1 className="text-3xl md:text-4xl font-bold">Projects</h1>
+        <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">Projects</SectionHeader>
         <div className="mt-6 flex flex-wrap gap-3 items-center">
           <input
             aria-label="Search projects"
@@ -87,18 +89,20 @@ export default function Projects({ items }: Props) {
             ))}
           </div>
         </div>
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-          {filtered.map((p) => (
-            <ProjectCard
-              key={p.key}
-              name={p.name}
-              description={p.description}
-              tech={p.tech}
-              repoUrl={p.repoUrl}
-              stars={p.stars}
-            />
-          ))}
-        </div>
+        <MotionSection>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+            {filtered.map((p) => (
+              <ProjectCard
+                key={p.key}
+                name={p.name}
+                description={p.description}
+                tech={p.tech}
+                repoUrl={p.repoUrl}
+                stars={p.stars}
+              />
+            ))}
+          </div>
+        </MotionSection>
       </section>
     </>
   );

@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import SectionHeader from "@/components/SectionHeader";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -47,7 +48,7 @@ export default function Experience() {
     <>
       <SEO title="Experience • Vraj Patel" description="Professional experience timeline including CVS Health, Warner Bros Discovery, and Slalom." />
       <section className="container-responsive py-16 animate-fadeIn">
-        <h1 className="text-3xl md:text-4xl font-bold">Experience</h1>
+        <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">Experience</SectionHeader>
         <div className="mt-8 grid md:grid-cols-12 gap-6">
           <div className="md:col-span-5 space-y-3" role="radiogroup" aria-label="Select a role">
             {roles.map((r) => (

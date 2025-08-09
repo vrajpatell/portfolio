@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Layout from "@/components/Layout";
+import { LazyMotion } from "framer-motion";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -18,9 +19,11 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       >
         <div className="liquid-highlight" />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <LazyMotion features={() => import("framer-motion").then((m) => m.domAnimation)} strict>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </LazyMotion>
       </div>
     </>
   );

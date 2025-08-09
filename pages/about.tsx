@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function About() {
   return (
@@ -8,7 +9,7 @@ export default function About() {
         description="Professional summary for Vraj Patel, AI Software Engineer specializing in microservices, real-time streaming (Kafka), and cloud-native ML/NLP."
       />
       <section className="container-responsive py-16" role="region" aria-labelledby="about-heading">
-        <h1 id="about-heading" className="text-3xl md:text-4xl font-bold">About</h1>
+        <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">About</SectionHeader>
         <div className="mt-6 max-w-3xl space-y-5 text-slate-300">
           <div className="glass-card rounded-xl p-5">
             <h2 className="text-xl font-semibold text-white">About Me</h2>
