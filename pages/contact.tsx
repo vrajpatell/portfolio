@@ -38,13 +38,13 @@ export default function Contact() {
   return (
     <>
       <SEO title="Contact • Vraj Patel" description="Get in touch with Vraj Patel for engineering opportunities, collaborations, and mentorship." />
-      <section className="container-responsive py-16">
+      <section className="container-responsive py-16 animate-fadeIn">
         <h1 className="text-3xl md:text-4xl font-bold">Contact</h1>
-        <form onSubmit={onSubmit} className="mt-8 max-w-xl space-y-4">
+        <form onSubmit={onSubmit} className="mt-8 max-w-xl space-y-4 liquid-card rounded-2xl p-5">
           <div>
             <label className="block text-sm text-slate-300">Name</label>
             <input
-              className="mt-1 w-full rounded-md border border-slate-800 bg-slate-900 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-500"
+              className="mt-1 w-full rounded-md border border-white/20 bg-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-500 backdrop-blur"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -54,7 +54,7 @@ export default function Contact() {
             <label className="block text-sm text-slate-300">Email</label>
             <input
               type="email"
-              className="mt-1 w-full rounded-md border border-slate-800 bg-slate-900 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-500"
+              className="mt-1 w-full rounded-md border border-white/20 bg-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-500 backdrop-blur"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -63,13 +63,13 @@ export default function Contact() {
           <div>
             <label className="block text-sm text-slate-300">Message</label>
             <textarea
-              className="mt-1 w-full min-h-[140px] rounded-md border border-slate-800 bg-slate-900 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-500"
+              className="mt-1 w-full min-h-[140px] rounded-md border border-white/20 bg-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-500 backdrop-blur"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
             />
           </div>
-          <button type="submit" className="rounded-md bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-emerald-400">
+          <button type="submit" className="glass-button">
             Send
           </button>
           {status && <p className="text-sm text-slate-300">{status}</p>}

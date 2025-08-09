@@ -113,6 +113,28 @@ body {
 /* Icon tint helper */
 .tint { color: hsl(var(--tint)); }
 
+/* Glass button */
+.glass-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+  border: 1px solid rgba(255,255,255,0.22);
+  color: var(--fg);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px) saturate(160%);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.glass-button:hover { transform: translateY(-1px); border-color: rgba(34,197,94,0.5); box-shadow: 0 10px 24px rgba(34,197,94,0.18); }
+.glass-button:focus-visible { outline: 2px solid hsl(var(--tint)); outline-offset: 2px; }
+
+/* Inner glow for avatars */
+.inner-glow {
+  box-shadow: inset 0 0 40px rgba(255,255,255,0.25), 0 0 24px rgba(34,197,94,0.25);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

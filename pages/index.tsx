@@ -35,34 +35,10 @@ export default function Home() {
               and GCP.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
-              <a
-                href="/Vraj_Patel_Resume.pdf"
-                className="inline-flex items-center rounded-md bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-emerald-400"
-              >
-                Download Resume
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-md border border-gray-700 px-5 py-2.5 text-sm font-semibold text-gray-100 hover:bg-gray-800"
-              >
-                Contact Me
-              </Link>
-              <a
-                href="https://www.linkedin.com/in/vrajpatell0712/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center rounded-md border border-gray-700 px-5 py-2.5 text-sm font-semibold text-gray-100 hover:bg-gray-800"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://github.com/vrajpatell"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center rounded-md border border-gray-700 px-5 py-2.5 text-sm font-semibold text-gray-100 hover:bg-gray-800"
-              >
-                GitHub
-              </a>
+              <a href="/Vraj_Patel_Resume.pdf" className="glass-button">Download Resume</a>
+              <Link href="/contact" className="glass-button">Contact Me</Link>
+              <a href="https://www.linkedin.com/in/vrajpatell0712/" target="_blank" rel="noreferrer" className="glass-button">LinkedIn</a>
+              <a href="https://github.com/vrajpatell" target="_blank" rel="noreferrer" className="glass-button">GitHub</a>
             </div>
             <ul className="mt-6 text-gray-300 space-y-1">
               <li>Scottsdale, AZ</li>
@@ -78,7 +54,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="md:col-span-5 flex md:justify-end">
-            <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-[28px] overflow-hidden ring-4 ring-emerald-500/40 float-slow liquid-card">
+            <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden ring-4 ring-emerald-500/40 float-slow liquid-card inner-glow">
               <Image
                 src="https://github.com/vrajpatell.png"
                 alt="Vraj Patel headshot"

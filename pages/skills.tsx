@@ -14,15 +14,15 @@ export default function Skills() {
   return (
     <>
       <SEO title="Skills • Vraj Patel" description="Programming, AI/ML, cloud, distributed systems, databases, DevOps, and leadership skills." />
-      <section className="container-responsive py-16">
+      <section className="container-responsive py-16 animate-fadeIn">
         <h1 className="text-3xl md:text-4xl font-bold">Skills</h1>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((cat) => (
-            <div key={cat.title} className="rounded-lg border border-slate-800 bg-slate-900/50 p-5">
+            <div key={cat.title} className="rounded-2xl liquid-card p-5 transition-transform duration-200 hover:-translate-y-0.5">
               <h2 className="text-lg font-semibold text-white">{cat.title}</h2>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {cat.items.map((i) => (
-                  <li key={i} className="text-sm bg-slate-800 text-slate-300 px-2 py-1 rounded">
+                  <li key={i} className="text-sm bg-white/10 text-slate-100 px-2 py-1 rounded">
                     {i}
                   </li>
                 ))}
