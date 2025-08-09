@@ -1,11 +1,12 @@
 import SEO from "@/components/SEO";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function CVSHealth() {
   return (
     <>
       <SEO title="CVS Health • Vraj Patel" description="AI Software Engineer at CVS Health — microservices, streaming, Durable Functions, CI/CD, MongoDB migration." />
       <section className="container-responsive py-16">
-        <h1 className="text-3xl md:text-4xl font-bold">AI Software Engineer • CVS Health</h1>
+        <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">AI Software Engineer • CVS Health</SectionHeader>
         <p className="text-slate-400 mt-1">Aug 2023 – Present</p>
         <ul className="mt-6 space-y-2 list-disc list-inside text-slate-300">
           <li>Architected and deployed distributed, containerized microservices for document transformation and speech‑to‑text across Azure/GCP/AWS.</li>

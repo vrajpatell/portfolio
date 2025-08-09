@@ -103,12 +103,33 @@ body {
   animation: fadeIn 420ms ease-out;
 }
 
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeUp { animation: fadeUp 700ms ease-out both; }
+
 @keyframes floatSlow {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0px); }
 }
 .float-slow { animation: floatSlow 6s ease-in-out infinite; }
+
+@keyframes blob {
+  0% { transform: translate(0,0) scale(1); }
+  33% { transform: translate(10px,-20px) scale(1.05); }
+  66% { transform: translate(-15px,10px) scale(0.97); }
+  100% { transform: translate(0,0) scale(1); }
+}
+.animate-blob { animation: blob 14s ease-in-out infinite; }
+
+/* Underline in animation for section headers */
+@keyframes underlineIn {
+  0% { transform: scaleX(0); opacity: 0; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+.animate-underlineIn { animation: underlineIn 600ms ease-out both; }
 
 /* Icon tint helper */
 .tint { color: hsl(var(--tint)); }
@@ -147,7 +168,24 @@ body {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .animate-fadeIn, .float-slow { animation: none !important; }
+  .animate-fadeIn, .animate-fadeUp, .float-slow, .animate-blob { animation: none !important; }
 }
 
-/* Removed duplicate body/background theme to avoid overriding gradient */
+/* Gradient mesh and grain utilities */
+:root {
+  --mesh-1: 255, 153, 102;
+  --mesh-2: 102, 153, 255;
+  --mesh-3: 255, 102, 178;
+}
+.bg-gradient-mesh {
+  background: radial-gradient(60% 60% at 10% 10%, rgba(var(--mesh-1),0.22) 0%, transparent 60%),
+              radial-gradient(50% 50% at 90% 20%, rgba(var(--mesh-2),0.22) 0%, transparent 60%),
+              radial-gradient(70% 70% at 50% 100%, rgba(var(--mesh-3),0.22) 0%, transparent 60%);
+  filter: saturate(1.05);
+}
+.bg-noise {
+  background-image: url("/textures/grain.png");
+  mix-blend-mode: soft-light;
+  opacity: .25;
+}
+

@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import SEO from "@/components/SEO";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -56,7 +57,7 @@ export default function Contact() {
     <>
       <SEO title="Contact • Vraj Patel" description="Get in touch with Vraj Patel for engineering opportunities, collaborations, and mentorship." />
       <section className="container-responsive py-16 animate-fadeIn">
-        <h1 className="text-3xl md:text-4xl font-bold">Contact</h1>
+        <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">Contact</SectionHeader>
         <form onSubmit={onSubmit} className="mt-8 max-w-xl space-y-4 liquid-card rounded-2xl p-5" noValidate>
           <input id="company" name="company" type="text" className="hidden" tabIndex={-1} autoComplete="off" />
           <div>
