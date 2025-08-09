@@ -1,5 +1,8 @@
 const config = {
-  plugins: ["@tailwindcss/postcss"],
+  // Use object form so PostCSS loads the plugin correctly
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
 };
 
 export default config;
