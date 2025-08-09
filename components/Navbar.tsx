@@ -15,7 +15,7 @@ export default function Navbar() {
   const router = useRouter();
   return (
     <header className="sticky top-0 z-40">
-      <nav className="container-responsive liquid-surface flex items-center justify-between h-14 rounded-b-2xl px-4 animate-fadeIn">
+      <nav className="container-responsive liquid-surface flex items-center justify-between h-14 rounded-b-2xl px-4 animate-fadeIn transition-[backdrop-filter,height] duration-300 supports-[backdrop-filter]:backdrop-blur-md will-change-transform">
         <Link href="/" className="font-bold tracking-tight text-slate-100">
           Vraj Patel
         </Link>

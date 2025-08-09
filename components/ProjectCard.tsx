@@ -10,7 +10,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ name, description, tech, repoUrl, demoUrl, stars, forks }: ProjectCardProps) {
   return (
-    <div className="rounded-xl glass-card glass-hover p-5 transition">
+    <div className="rounded-xl glass-card glass-hover p-5 transition-transform duration-200 hover:-translate-y-0.5">
       <div className="flex items-start justify-between gap-4">
         <h3 className="text-lg font-semibold text-white">{name}</h3>
         <div className="flex gap-3 text-xs text-slate-400">
@@ -27,9 +27,9 @@ export default function ProjectCard({ name, description, tech, repoUrl, demoUrl,
         ))}
       </div>
       <div className="mt-4 flex gap-3">
-        <a href={repoUrl} target="_blank" rel="noreferrer" className="text-sm font-medium text-emerald-400 hover:text-emerald-300">GitHub</a>
+        <a href={repoUrl} target="_blank" rel="noreferrer" className="glass-button text-sm">GitHub</a>
         {demoUrl && (
-          <a href={demoUrl} target="_blank" rel="noreferrer" className="text-sm font-medium text-sky-400 hover:text-sky-300">Demo</a>
+          <a href={demoUrl} target="_blank" rel="noreferrer" className="glass-button text-sm">Demo</a>
         )}
       </div>
     </div>

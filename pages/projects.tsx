@@ -1,6 +1,7 @@
 import SEO from "@/components/SEO";
 import ProjectCard from "@/components/ProjectCard";
 import type { GetStaticProps } from "next";
+import { useMemo, useState } from "react";
 
 type RepoMeta = { name: string; stars?: number; forks?: number };
 
@@ -88,13 +89,41 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 export default function Projects({ meta }: Props) {
+  const [query, setQuery] = useState("");
+  const [tag, setTag] = useState<string | null>(null);
+  const allTags = useMemo(() => Array.from(new Set(projects.flatMap((p) => p.tech))), []);
+  const filtered = useMemo(() => {
+    return projects.filter((p) => {
+      const matchesTag = !tag || p.tech.includes(tag);
+      const q = query.trim().toLowerCase();
+      const matchesQuery = !q || p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
+      return matchesTag && matchesQuery;
+    });
+  }, [query, tag]);
   return (
     <>
       <SEO title="Projects • Vraj Patel" description="Highlighted open‑source projects and demos from GitHub." />
-      <section className="container-responsive py-16">
+      <section className="container-responsive py-16 animate-fadeIn section-wrap">
+        <div className="section-bg" style={{backgroundImage: "url(https://images.unsplash.com/photo-1527443224154-c4e1b7a34e8c?q=80&w=1600&auto=format&fit=crop)", borderRadius: 16}} />
+        <div className="section-overlay" />
         <h1 className="text-3xl md:text-4xl font-bold">Projects</h1>
+        <div className="mt-6 flex flex-wrap gap-3 items-center">
+          <input
+            aria-label="Search projects"
+            placeholder="Search…"
+            className="liquid-card px-3 py-2 rounded-xl text-sm bg-white/10 border border-white/20 outline-none focus:ring-2 focus:ring-emerald-500"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <div className="flex flex-wrap gap-2">
+            <button className={`glass-button text-xs ${tag===null?"ring-2 ring-emerald-500/40":''}`} onClick={()=>setTag(null)}>All</button>
+            {allTags.slice(0,12).map((t)=>(
+              <button key={t} className={`glass-button text-xs ${tag===t?"ring-2 ring-emerald-500/40":''}`} onClick={()=>setTag(t)}>{t}</button>
+            ))}
+          </div>
+        </div>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-          {projects.map((p) => (
+          {filtered.map((p) => (
             <ProjectCard
               key={p.key}
               name={p.name}
