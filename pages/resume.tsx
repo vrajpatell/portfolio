@@ -1,13 +1,12 @@
-import { useEffect } from "react";
+import { useMemo } from "react";
 import SEO from "@/components/SEO";
 import Link from "next/link";
 
 export default function ResumePage() {
-  useEffect(() => {
-    // No-op; page is static
+  const pdfPath = useMemo(() => {
+    const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
+    return `${prefix}/Vraj_Patel_Resume.pdf`;
   }, []);
-
-  const pdfPath = "/Vraj_Patel_Resume.pdf";
 
   return (
     <>
