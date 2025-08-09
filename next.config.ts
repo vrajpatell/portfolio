@@ -7,18 +7,20 @@ const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1]
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  output: "export",
+  trailingSlash: true,
   images: {
     unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
-      { protocol: "https", hostname: "raw.githubusercontent.com" },
+      { protocol: "https", hostname: "github.com" },
       { protocol: "https", hostname: "media.licdn.com" },
     ],
   },
-  output: "export",
-  trailingSlash: true,
   basePath: isGithubPages && repoName ? `/${repoName}` : undefined,
   assetPrefix: isGithubPages && repoName ? `/${repoName}/` : undefined,
 };
 
 export default nextConfig;
+
+
