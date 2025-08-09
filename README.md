@@ -14,6 +14,10 @@ npm run build
 
 The static site is emitted to `out/` (configured via `next.config.ts`).
 
+### Contact form (static hosting)
+
+This site uses Formspree for the contact form backend. Set `NEXT_PUBLIC_FORMSPREE_ENDPOINT` in repository secrets to your Formspree endpoint, so the deploy workflow injects it at build time.
+
 ## Deploy to GitHub Pages
 
 1. Set repo Settings → Pages → Source: `gh-pages` branch.

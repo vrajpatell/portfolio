@@ -1,0 +1,38 @@
+---
+title: "Warner Bros Discovery — Global Content ID Platform"
+date: "2025-08-01"
+tags: ["Cloud", "Microservices"]
+role: "Software Engineer"
+company: "Warner Bros Discovery"
+---
+
+## Problem
+Consolidate and standardize content identifiers across partners at global scale.
+
+## Constraints
+- Partner SLAs (Google, Apple, Roku, Amazon)
+- Large data migration with zero downtime
+
+## Approach
+Service decomposition, DynamoDB modeling, CI/CD with GitHub Actions, and robust observability.
+
+```mermaid
+flowchart LR
+A[Legacy IDs] --> B[Migration Service]
+B --> C[Normalizer]
+C --> D[DynamoDB]
+D --> E[Partner Integrations]
+```
+
+## Architecture
+Serverless compute, DynamoDB, event-driven sync, metrics/alerts with Grafana and incident response.
+
+## Results
+- **25% overhead reduction** after migration
+- **1M+ records** migrated safely
+- **Improved partner reliability** via standardized APIs
+
+## What I'd Do Next
+Introduce schema registry and end-to-end contract tests for integrations.
+
+

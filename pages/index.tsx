@@ -1,17 +1,14 @@
 import Image from "next/image";
-import Head from "next/head";
 import Link from "next/link";
+import SEO from "@/components/SEO";
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Vraj Patel | AI Software Engineer</title>
-        <meta
-          name="description"
-          content="AI Software Engineer in Scottsdale, AZ. 5+ years building scalable distributed systems and Gen‑AI/NLP solutions."
-        />
-      </Head>
+      <SEO
+        title="Vraj Patel | AI Software Engineer"
+        description="AI Software Engineer in Scottsdale, AZ. 5+ years building scalable distributed systems and Gen‑AI/NLP solutions."
+      />
       <section className="container-responsive py-16 md:py-24 animate-fadeIn">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-7">
@@ -47,8 +44,8 @@ export default function Home() {
                   +1 (469) 245‑7484
                 </a>
                 {" • "}
-                <a className="underline" href="mailto:vrajpatel1995@gmail.com">
-                  vrajpatel1995@gmail.com
+                <a className="underline" href="mailto:vpatel3777@gmail.com">
+                  vpatel3777@gmail.com
                 </a>
               </li>
             </ul>

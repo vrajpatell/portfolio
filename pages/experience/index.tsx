@@ -1,5 +1,4 @@
 import SEO from "@/components/SEO";
-import Timeline from "@/components/Timeline";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -50,24 +49,29 @@ export default function Experience() {
       <section className="container-responsive py-16 animate-fadeIn">
         <h1 className="text-3xl md:text-4xl font-bold">Experience</h1>
         <div className="mt-8 grid md:grid-cols-12 gap-6">
-          <div className="md:col-span-5 space-y-3">
+          <div className="md:col-span-5 space-y-3" role="radiogroup" aria-label="Select a role">
             {roles.map((r) => (
-              <button
-                key={r.key}
-                onClick={() => setOpenKey(openKey === r.key ? null : r.key)}
-                className={`w-full text-left rounded-2xl px-4 py-3 transition liquid-surface ${openKey === r.key ? "ring-2 ring-emerald-500/40" : ""}`}
-              >
+              <label key={r.key} className={`w-full block rounded-2xl px-4 py-3 transition liquid-surface ${openKey === r.key ? "ring-2 ring-emerald-500/40" : ""}`}>
+                <input
+                  type="radio"
+                  name="role"
+                  value={r.key}
+                  className="sr-only"
+                  checked={openKey === r.key}
+                  onChange={() => setOpenKey(r.key)}
+                  aria-controls={`panel-${r.key}`}
+                />
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-white">{r.role}</span>
                   <span className="text-xs text-slate-300">{r.period}</span>
                 </div>
                 <div className="text-sm text-slate-300">{r.company}</div>
-              </button>
+              </label>
             ))}
           </div>
           <div className="md:col-span-7">
             {roles.map((r) => (
-              <div key={r.key} className={`${openKey === r.key ? "block" : "hidden"}`}>
+              <div key={r.key} id={`panel-${r.key}`} className={`${openKey === r.key ? "block" : "hidden"}`}>
                 <div className="liquid-card rounded-2xl p-5">
                   <h2 className="text-xl font-semibold text-white">{r.role} • {r.company}</h2>
                   <p className="text-slate-400 text-sm">{r.period}</p>

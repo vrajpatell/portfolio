@@ -1,0 +1,39 @@
+---
+title: "CVS Health — Intelligent Document Pipeline at Scale"
+date: "2025-08-01"
+tags: ["AI", "Cloud", "Microservices"]
+role: "AI Software Engineer"
+company: "CVS Health"
+---
+
+## Problem
+Automate extraction and enrichment of unstructured documents across multiple business units with strict compliance and SLAs.
+
+## Constraints
+- Scalability across Azure/GCP/AWS
+- PHI/PII compliance; auditability
+- Throughput and latency targets for intake queues
+
+## Approach
+Composite AI/ML with event-driven microservices and durable orchestrations.
+
+```mermaid
+flowchart LR
+A[Document Intake] --> B[Pre-processing]
+B --> C[LLM Metadata Enhancer]
+C --> D[Vector Store]
+D --> E[Search + APIs]
+```
+
+## Architecture
+Containerized microservices, Apache Kafka, Azure Durable Functions, MongoDB, and observability with dashboards/alerts.
+
+## Results
+- **+25% accuracy** on entity extraction
+- **99.9% uptime** across services
+- **Onboarding time cut to seconds** with automation
+
+## What I'd Do Next
+Add active learning loop and human-in-the-loop review tooling.
+
+
