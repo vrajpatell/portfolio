@@ -66,14 +66,14 @@ export default function Home() {
             )}
             {reduce ? (
               <div className="flex flex-wrap gap-3 mt-8">
-                <a href="/Vraj_Patel_Resume.pdf" className="glass-button">Download Resume</a>
+                <Link href="/resume" className="glass-button">Download Resume</Link>
                 <Link href="/contact" className="glass-button">Contact Me</Link>
                 <a href="https://www.linkedin.com/in/vrajpatell0712/" target="_blank" rel="noreferrer" className="glass-button">LinkedIn</a>
                 <a href="https://github.com/vrajpatell" target="_blank" rel="noreferrer" className="glass-button">GitHub</a>
               </div>
             ) : (
               <fm.div variants={fadeUp} initial="hidden" animate="show" className="flex flex-wrap gap-3 mt-8">
-                <a href="/Vraj_Patel_Resume.pdf" className="glass-button">Download Resume</a>
+                <Link href="/resume" className="glass-button">Download Resume</Link>
                 <Link href="/contact" className="glass-button">Contact Me</Link>
                 <a href="https://www.linkedin.com/in/vrajpatell0712/" target="_blank" rel="noreferrer" className="glass-button">LinkedIn</a>
                 <a href="https://github.com/vrajpatell" target="_blank" rel="noreferrer" className="glass-button">GitHub</a>
