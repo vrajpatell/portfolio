@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y build-essential
       - name: Install dependencies
         run: npm ci || npm install
       - name: Build static export
