@@ -1,0 +1,89 @@
+import Image from "next/image";
+import Head from "next/head";
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Vraj Patel | AI Software Engineer</title>
+        <meta
+          name="description"
+          content="AI Software Engineer in Scottsdale, AZ. 5+ years building scalable distributed systems and Gen‑AI/NLP solutions."
+        />
+      </Head>
+      <section className="container-responsive py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div className="md:col-span-7">
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+              Vraj Patel
+              <span className="block text-xl md:text-2xl font-normal text-gray-300 mt-2">
+                AI Software Engineer • Scottsdale, AZ
+              </span>
+            </h1>
+            <p className="text-gray-300 mt-6 max-w-2xl">
+              AI Software Engineer with 5+ years designing and deploying scalable
+              distributed systems and Gen‑AI/NLP solutions. I architect high‑availability
+              microservices, optimize ML and speech‑to‑text pipelines, and automate
+              data‑driven products in cloud‑native environments.
+            </p>
+            <div className="flex flex-wrap gap-3 mt-8">
+              <a
+                href="/Vraj_Patel_Resume.pdf"
+                className="inline-flex items-center rounded-md bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-emerald-400"
+              >
+                Download Resume
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-md border border-gray-700 px-5 py-2.5 text-sm font-semibold text-gray-100 hover:bg-gray-800"
+              >
+                Contact Me
+              </Link>
+              <a
+                href="https://www.linkedin.com/in/vrajpatell0712/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-md border border-gray-700 px-5 py-2.5 text-sm font-semibold text-gray-100 hover:bg-gray-800"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/vrajpatell"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-md border border-gray-700 px-5 py-2.5 text-sm font-semibold text-gray-100 hover:bg-gray-800"
+              >
+                GitHub
+              </a>
+            </div>
+            <ul className="mt-6 text-gray-300 space-y-1">
+              <li>Scottsdale, AZ</li>
+              <li>
+                <a className="underline" href="tel:+14692457484">
+                  +1 (469) 245‑7484
+                </a>
+                {" • "}
+                <a className="underline" href="mailto:vrajpatel1995@gmail.com">
+                  vrajpatel1995@gmail.com
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="md:col-span-5 flex md:justify-end">
+            <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden ring-4 ring-emerald-500/40">
+              <Image
+                src="https://github.com/vrajpatell.png"
+                alt="Vraj Patel headshot"
+                fill
+                sizes="(max-width: 768px) 160px, 224px"
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

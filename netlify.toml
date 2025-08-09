@@ -1,0 +1,10 @@
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/hello"
+  to = "/.netlify/functions/contact"
+  status = 200
+
+
+
