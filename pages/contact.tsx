@@ -58,8 +58,15 @@ export default function Contact() {
       <SEO title="Contact • Vraj Patel" description="Get in touch with Vraj Patel for engineering opportunities, collaborations, and mentorship." />
       <section className="container-responsive py-16 animate-fadeIn">
         <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">Contact</SectionHeader>
-        <form onSubmit={onSubmit} className="mt-8 max-w-xl space-y-4 liquid-card rounded-2xl p-5" noValidate>
+        <form
+          action={formspreeEndpoint}
+          method="POST"
+          onSubmit={onSubmit}
+          className="mt-8 max-w-xl space-y-4 liquid-card rounded-2xl p-5"
+          noValidate
+        >
           <input id="company" name="company" type="text" className="hidden" tabIndex={-1} autoComplete="off" />
+          <input type="hidden" name="_subject" value="New portfolio message" />
           <div>
             <label htmlFor="name" className="block text-sm text-slate-300">Name</label>
             <input
@@ -99,7 +106,6 @@ export default function Contact() {
           </button>
           <p className="text-sm text-slate-300" aria-live="polite">{status}</p>
         </form>
-        <p className="mt-6 text-slate-400">Or reach me at <a className="underline" href="mailto:vpatel3777@gmail.com">vpatel3777@gmail.com</a>.</p>
       </section>
     </>
   );
