@@ -15,7 +15,7 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
     "framer-motion": "^12.23.12",
-    "lightningcss": "^1.25.1",
+    "lightningcss": "^1.29.0",
     "next": "15.4.6",
     "react": "19.1.0",
     "react-dom": "19.1.0"
@@ -32,5 +32,8 @@
     "gh-pages": "^6.1.1",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "optionalDependencies": {
+    "lightningcss-linux-x64-gnu": "^1.29.0"
   }
 }
