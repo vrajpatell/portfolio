@@ -47,7 +47,7 @@ export default function Experience() {
   return (
     <>
       <SEO title="Experience • Vraj Patel" description="Professional experience timeline including CVS Health, Warner Bros Discovery, and Slalom." />
-      <section className="container-responsive py-16">
+      <section className="container-responsive py-16 animate-fadeIn">
         <h1 className="text-3xl md:text-4xl font-bold">Experience</h1>
         <div className="mt-8 grid md:grid-cols-12 gap-6">
           <div className="md:col-span-5 space-y-3">
@@ -55,7 +55,7 @@ export default function Experience() {
               <button
                 key={r.key}
                 onClick={() => setOpenKey(openKey === r.key ? null : r.key)}
-                className={`w-full text-left rounded-xl px-4 py-3 transition glass ${openKey === r.key ? "ring-2 ring-emerald-500/40" : ""}`}
+                className={`w-full text-left rounded-2xl px-4 py-3 transition liquid-surface ${openKey === r.key ? "ring-2 ring-emerald-500/40" : ""}`}
               >
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-white">{r.role}</span>
@@ -68,7 +68,7 @@ export default function Experience() {
           <div className="md:col-span-7">
             {roles.map((r) => (
               <div key={r.key} className={`${openKey === r.key ? "block" : "hidden"}`}>
-                <div className="glass-card rounded-xl p-5">
+                <div className="liquid-card rounded-2xl p-5">
                   <h2 className="text-xl font-semibold text-white">{r.role} • {r.company}</h2>
                   <p className="text-slate-400 text-sm">{r.period}</p>
                   <ul className="mt-3 list-disc list-inside text-slate-300 space-y-1 text-sm">

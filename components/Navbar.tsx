@@ -15,7 +15,7 @@ export default function Navbar() {
   const router = useRouter();
   return (
     <header className="sticky top-0 z-40">
-      <nav className="container-responsive glass flex items-center justify-between h-14 rounded-b-xl px-4">
+      <nav className="container-responsive liquid-surface flex items-center justify-between h-14 rounded-b-2xl px-4 animate-fadeIn">
         <Link href="/" className="font-bold tracking-tight text-slate-100">
           Vraj Patel
         </Link>

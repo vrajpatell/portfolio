@@ -12,7 +12,7 @@ export default function Home() {
           content="AI Software Engineer in Scottsdale, AZ. 5+ years building scalable distributed systems and Gen‑AI/NLP solutions."
         />
       </Head>
-      <section className="container-responsive py-16 md:py-24">
+      <section className="container-responsive py-16 md:py-24 animate-fadeIn">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-7">
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
@@ -78,7 +78,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="md:col-span-5 flex md:justify-end">
-            <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden ring-4 ring-emerald-500/40">
+            <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-[28px] overflow-hidden ring-4 ring-emerald-500/40 float-slow liquid-card">
               <Image
                 src="https://github.com/vrajpatell.png"
                 alt="Vraj Patel headshot"

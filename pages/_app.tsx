@@ -9,9 +9,19 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <div
+        onMouseMove={(e) => {
+          if (typeof document !== "undefined") {
+            document.documentElement.style.setProperty("--mx", `${e.clientX}px`);
+            document.documentElement.style.setProperty("--my", `${e.clientY}px`);
+          }
+        }}
+      >
+        <div className="liquid-highlight" />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </div>
     </>
   );
 }
