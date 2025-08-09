@@ -10,7 +10,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ name, description, tech, repoUrl, demoUrl, stars, forks }: ProjectCardProps) {
   return (
-    <div className="rounded-lg border border-slate-800 bg-slate-900/50 p-5 hover:border-emerald-600/50 transition">
+    <div className="rounded-xl glass-card glass-hover p-5 transition">
       <div className="flex items-start justify-between gap-4">
         <h3 className="text-lg font-semibold text-white">{name}</h3>
         <div className="flex gap-3 text-xs text-slate-400">
@@ -21,7 +21,7 @@ export default function ProjectCard({ name, description, tech, repoUrl, demoUrl,
       <p className="mt-2 text-sm text-slate-300">{description}</p>
       <div className="mt-3 flex flex-wrap gap-2">
         {tech.map((t) => (
-          <span key={t} className="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">
+          <span key={t} className="text-xs bg-white/10 text-slate-100 px-2 py-1 rounded">
             {t}
           </span>
         ))}
@@ -35,6 +35,5 @@ export default function ProjectCard({ name, description, tech, repoUrl, demoUrl,
     </div>
   );
 }
-
 
 

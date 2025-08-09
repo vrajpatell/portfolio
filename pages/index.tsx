@@ -21,11 +21,18 @@ export default function Home() {
                 AI Software Engineer • Scottsdale, AZ
               </span>
             </h1>
-            <p className="text-gray-300 mt-6 max-w-2xl">
-              AI Software Engineer with 5+ years designing and deploying scalable
-              distributed systems and Gen‑AI/NLP solutions. I architect high‑availability
-              microservices, optimize ML and speech‑to‑text pipelines, and automate
-              data‑driven products in cloud‑native environments.
+            <p className="text-gray-300 mt-6 max-w-2xl glass-card rounded-xl p-4">
+              I am an AI Software Engineer with over 5 years of experience designing,
+              building, and deploying scalable distributed systems and Generative AI/NLP
+              solutions in cloud-native environments. I specialize in high‑availability
+              microservices, event‑driven systems, and end‑to‑end AI pipelines.
+            </p>
+            <p className="text-gray-300 mt-4 max-w-2xl glass-card rounded-xl p-4">
+              I architect APIs with Azure Durable Functions, optimize ML and
+              speech‑to‑text pipelines, and build document intelligence using Azure
+              Custom Vision, Form Recognizer, and LLM‑based metadata enrichment—
+              delivering secure, performant, and user‑friendly products on AWS, Azure,
+              and GCP.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
               <a

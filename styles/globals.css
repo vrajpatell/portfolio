@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0b1220;
+  --bg: #0b0f1a;
   --fg: #e5e7eb;
   --muted: #9ca3af;
   --accent: #22c55e;
@@ -12,7 +12,10 @@ html, body, #__next {
 }
 
 body {
-  background-color: var(--bg);
+  background:
+    radial-gradient(1200px 800px at 10% -10%, rgba(34,197,94,0.12), transparent 60%),
+    radial-gradient(900px 600px at 100% 10%, rgba(59,130,246,0.12), transparent 60%),
+    linear-gradient(180deg, #0b0f1a 0%, #0b1220 100%);
   color: var(--fg);
 }
 
@@ -23,6 +26,38 @@ body {
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+/* Glass UI helpers */
+.glass {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-right-color: rgba(255, 255, 255, 0.18);
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  backdrop-filter: saturate(140%) blur(14px);
+}
+
+.glass-card {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-right-color: rgba(255, 255, 255, 0.16);
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  backdrop-filter: saturate(140%) blur(12px);
+}
+
+.glass-hover:hover {
+  border-color: rgba(34,197,94,0.45);
+  box-shadow: 0 10px 28px rgba(34,197,94,0.18);
 }
 
 :root {
