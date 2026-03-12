@@ -16,6 +16,9 @@ type RepoEntry = {
   stars: number;
   language: string | null;
   topics?: string[];
+  archived?: boolean;
+  fork?: boolean;
+  updatedAt?: string;
 };
 
 type Item = {
@@ -33,14 +36,18 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const file = path.join(process.cwd(), "data", "projects.json");
   const raw = await fs.readFile(file, "utf-8");
   const list: RepoEntry[] = JSON.parse(raw);
-  const items: Item[] = list.map((r) => ({
-    key: r.name.toLowerCase(),
-    name: r.name,
-    description: r.description ?? "Open‑source project",
-    tech: [r.language, ...(r.topics || [])].filter(Boolean) as string[],
-    repoUrl: r.url,
-    stars: r.stars,
-  }));
+  const items: Item[] = list
+    .filter((r) => !r.archived && !r.fork)
+    .sort((a, b) => new Date(b.updatedAt || 0).getTime() - new Date(a.updatedAt || 0).getTime())
+    .slice(0, 18)
+    .map((r) => ({
+      key: r.name.toLowerCase(),
+      name: r.name,
+      description: r.description ?? "Open‑source project",
+      tech: [r.language, ...(r.topics || [])].filter(Boolean) as string[],
+      repoUrl: r.url,
+      stars: r.stars,
+    }));
   return { props: { items } };
 };
 
@@ -63,6 +70,7 @@ export default function Projects({ items }: Props) {
         <div className="section-bg" style={{backgroundImage: "url(https://images.unsplash.com/photo-1527443224154-c4e1b7a34e8c?q=80&w=1600&auto=format&fit=crop)", borderRadius: 16}} />
         <div className="section-overlay" />
         <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">Projects</SectionHeader>
+        <p className="mt-2 text-slate-300 max-w-3xl">A curated, frequently-updated set of repositories focused on AI, automation, and cloud-native engineering.</p>
         <div className="mt-6 flex flex-wrap gap-3 items-center">
           <input
             aria-label="Search projects"
@@ -102,6 +110,9 @@ export default function Projects({ items }: Props) {
               />
             ))}
           </div>
+          {filtered.length === 0 && (
+            <p className="mt-6 text-slate-300">No projects match your current search/filter. Try clearing filters.</p>
+          )}
         </MotionSection>
       </section>
     </>

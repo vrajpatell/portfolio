@@ -10,6 +10,7 @@ const links = [
   { href: "/projects", label: "Projects" },
   { href: "/education", label: "Education" },
   { href: "/contact", label: "Contact" },
+  { href: "/resume", label: "Resume" },
 ];
 
 export default function Navbar() {
@@ -40,8 +41,8 @@ export default function Navbar() {
         </motion.div>
         <div className="md:hidden">
           <details>
-            <summary className="cursor-pointer select-none">Menu</summary>
-            <div className="absolute right-4 mt-2 w-48 rounded-md glass p-2 flex flex-col">
+            <summary className="cursor-pointer select-none glass-button text-sm px-3 py-1">Menu</summary>
+            <div className="absolute right-4 mt-2 w-52 rounded-xl glass p-2 flex flex-col gap-1">
               {links.map(({ href, label }) => (
                 <Link
                   key={href}

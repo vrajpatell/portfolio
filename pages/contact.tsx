@@ -63,7 +63,7 @@ export default function Contact() {
 
   return (
     <>
-      <SEO title="Contact • Vraj Patel" description="Get in touch with Vraj Patel for engineering opportunities, collaborations, and mentorship." />
+      <SEO title="Contact • Vraj Patel" description="Get in touch with Vraj Patel for AI engineering opportunities, collaborations, consulting, and mentorship." />
       <section className="container-responsive py-16 animate-fadeIn">
         <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">Contact</SectionHeader>
         <form
@@ -100,6 +100,7 @@ export default function Contact() {
           </div>
           <div>
             <label htmlFor="message" className="block text-sm text-slate-300">Message</label>
+            <p className="text-xs text-slate-400 mt-1">Include your goals, timeline, and the best way to contact you.</p>
             <textarea
               id="message"
               name="message"
@@ -118,7 +119,7 @@ export default function Contact() {
         </form>
         {!isFormConfigured && (
           <p className="mt-4 text-slate-400">
-            Tip: This form isn't configured yet. Set the repo secret <code className="font-mono">NEXT_PUBLIC_FORMSPREE_ENDPOINT</code>
+            Tip: This form isn’t configured yet. Set the repo secret <code className="font-mono">NEXT_PUBLIC_FORMSPREE_ENDPOINT</code>
             {' '}to your Formspree endpoint, then redeploy. Meanwhile, you can email me at
             {' '}<a className="underline" href="mailto:vrajpatel1995@gmail.com">vrajpatel1995@gmail.com</a>.
           </p>
