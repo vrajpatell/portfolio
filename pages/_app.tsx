@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       >
         <div className="liquid-highlight" />
-        <LazyMotion features={domAnimation} strict>
+        <LazyMotion features={domAnimation}>
           <Layout>
             <Component {...pageProps} />
           </Layout>

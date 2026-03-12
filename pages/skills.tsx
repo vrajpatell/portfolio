@@ -1,20 +1,19 @@
 import SEO from "@/components/SEO";
 import SectionHeader from "@/components/SectionHeader";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 const categories: { title: string; items: string[] }[] = [
   { title: "Programming", items: ["Python", "Java", "C++", "TypeScript/JavaScript"] },
-  { title: "AI/ML", items: ["Gen AI", "LLMs (OpenAI, Azure OpenAI)", "NLP", "Speech-to-Text", "TensorFlow", "PyTorch", "Azure Custom Vision", "Form Recognizer"] },
+  { title: "AI/ML", items: ["Gen AI", "LLMs (OpenAI, Azure OpenAI)", "RAG", "Prompt Engineering", "AI Evaluation", "NLP", "Speech-to-Text", "TensorFlow", "PyTorch", "Azure Custom Vision", "Form Recognizer"] },
   { title: "Cloud", items: ["AWS", "Azure", "GCP"] },
-  { title: "Distributed systems", items: ["Microservices", "Kafka", "Docker", "Kubernetes"] },
+  { title: "Distributed systems", items: ["Microservices", "Kafka", "Event-Driven Architecture", "Docker", "Kubernetes"] },
   { title: "Data", items: ["MongoDB", "BigQuery", "Azure SQL", "DynamoDB"] },
-  { title: "DevOps", items: ["CI/CD", "GitLab", "Docker", "Test Automation", "Monitoring/Logging"] },
+  { title: "DevOps", items: ["CI/CD", "GitHub Actions", "GitLab", "Docker", "Test Automation", "Monitoring/Logging", "Observability"] },
   { title: "Other", items: ["System Design", "Code Reviews", "Agile", "TDD", "Product Management", "Effective Communication", "Leadership"] },
 ];
 
 export default function Skills() {
   const [active, setActive] = useState<string | null>(null);
-  const allSkills = useMemo(() => categories.flatMap(c=>c.items), []);
   return (
     <>
       <SEO title="Skills • Vraj Patel" description="Programming, AI/ML, cloud, distributed systems, databases, DevOps, and leadership skills." />

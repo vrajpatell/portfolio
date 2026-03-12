@@ -30,3 +30,6 @@ coverage/
 .sass-cache/
 
 
+
+# Generated resume artifact (binary, regenerated during prebuild)
+public/Vraj_Patel_Resume.pdf

@@ -12,7 +12,7 @@ export default function Home() {
       <BackgroundLayers particles intensity="low" />
       <SEO
         title="Vraj Patel | AI Software Engineer"
-        description="AI Software Engineer in Scottsdale, AZ. 5+ years building scalable distributed systems and Gen‑AI/NLP solutions."
+        description="AI Software Engineer in Scottsdale, AZ. 6+ years building scalable distributed systems and Gen‑AI/NLP solutions."
       />
       <section className="container-responsive py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
@@ -21,27 +21,27 @@ export default function Home() {
               <h1 className="text-3xl md:text-5xl font-bold leading-tight">
                 Vraj Patel
                 <span className="block text-xl md:text-2xl font-normal text-gray-300 mt-2">
-                  AI Software Engineer • Scottsdale, AZ
+                  Senior AI Software Engineer • Scottsdale, AZ
                 </span>
               </h1>
             ) : (
               <fm.h1 variants={fadeUp} initial="hidden" animate="show" className="text-3xl md:text-5xl font-bold leading-tight">
                 Vraj Patel
                 <span className="block text-xl md:text-2xl font-normal text-gray-300 mt-2">
-                  AI Software Engineer • Scottsdale, AZ
+                  Senior AI Software Engineer • Scottsdale, AZ
                 </span>
               </fm.h1>
             )}
             {reduce ? (
               <p className="text-gray-300 mt-6 max-w-2xl glass-card rounded-xl p-4">
-                I am an AI Software Engineer with over 5 years of experience designing,
+                I am an AI Software Engineer with over 6 years of experience designing,
                 building, and deploying scalable distributed systems and Generative AI/NLP
                 solutions in cloud-native environments. I specialize in high‑availability
                 microservices, event‑driven systems, and end‑to‑end AI pipelines.
               </p>
             ) : (
               <fm.p variants={fadeUp} initial="hidden" animate="show" className="text-gray-300 mt-6 max-w-2xl glass-card rounded-xl p-4">
-                I am an AI Software Engineer with over 5 years of experience designing,
+                I am an AI Software Engineer with over 6 years of experience designing,
                 building, and deploying scalable distributed systems and Generative AI/NLP
                 solutions in cloud-native environments. I specialize in high‑availability
                 microservices, event‑driven systems, and end‑to‑end AI pipelines.
@@ -81,6 +81,7 @@ export default function Home() {
             )}
             <ul className="mt-6 text-gray-300 space-y-1">
               <li>Scottsdale, AZ</li>
+              <li className="text-sm text-gray-400">Open to Senior IC and Tech Lead roles (Remote/Hybrid)</li>
               <li>
                 <a className="underline" href="tel:+14692457484">
                   +1 (469) 245‑7484
@@ -91,6 +92,18 @@ export default function Home() {
                 </a>
               </li>
             </ul>
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl">
+              {[
+                { label: "Experience", value: "6+ years" },
+                { label: "Production systems", value: "20+" },
+                { label: "Cloud platforms", value: "AWS • Azure • GCP" },
+              ].map((item) => (
+                <div key={item.label} className="liquid-card rounded-xl p-3">
+                  <p className="text-xs uppercase tracking-wide text-slate-400">{item.label}</p>
+                  <p className="text-sm text-slate-100 mt-1">{item.value}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="md:col-span-5 flex md:justify-end">
             <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden ring-4 ring-emerald-500/40 float-slow liquid-card inner-glow">

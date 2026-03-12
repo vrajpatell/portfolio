@@ -9,12 +9,12 @@ export default function About() {
         description="Professional summary for Vraj Patel, AI Software Engineer specializing in microservices, real-time streaming (Kafka), and cloud-native ML/NLP."
       />
       <section className="container-responsive py-16" role="region" aria-labelledby="about-heading">
-        <SectionHeader as="h1" className="text-3xl md:text-4xl font-bold">About</SectionHeader>
+        <SectionHeader id="about-heading" as="h1" className="text-3xl md:text-4xl font-bold">About</SectionHeader>
         <div className="mt-6 max-w-3xl space-y-5 text-slate-300">
           <div className="glass-card rounded-xl p-5">
             <h2 className="text-xl font-semibold text-white">About Me</h2>
             <p className="mt-3">
-              I am an AI Software Engineer with over 5 years of experience designing, building, and deploying
+              I am an AI Software Engineer with over 6 years of experience designing, building, and deploying
               scalable distributed systems and Generative AI/NLP solutions in cloud-native environments. My
               expertise spans microservices architecture, event-driven systems, and end-to-end AI pipelines, with a
               proven track record in healthcare and enterprise applications.
@@ -35,7 +35,7 @@ export default function About() {
             <p>
               Passionate about solving complex problems, I thrive in cross-functional teams, leading projects from
               concept to production while implementing CI/CD automation and best practices in system design. Whether
-              it’s architecting a retrieval-augmented generation service, building data-driven healthcare applications,
+              it’s architecting a retrieval-augmented generation service with strong evaluation and guardrails, building data-driven healthcare applications,
               or optimizing cloud infrastructure, I focus on delivering impactful, high-quality products that drive
               real-world results.
             </p>
